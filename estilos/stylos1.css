@@ -99,3 +99,9 @@ background-color: black;
      background-color:#596264;
    color:white;
    }
+   #descripcion
+   {
+     color: white;
+     font-size: 3rem;
+     text-align: center;
+   }
