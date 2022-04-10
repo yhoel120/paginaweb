@@ -176,11 +176,11 @@ ul.socialIcons {
   background-color: #666666;
   box-shadow: 0 0 18px #666666;
 }
- .ah .p{
+ .ah.p{
   text-align: center;
-  width: 40%;
+  width: 80%;
   color:red;
   background: orange;
-  padding: 0px 10px 70px 40px;
+  padding: 0px 0px 0px 40px;
 }
  
