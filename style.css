@@ -176,10 +176,11 @@ ul.socialIcons {
   background-color: #666666;
   box-shadow: 0 0 18px #666666;
 }
-.noce .ah{
+ .ah{
   text-align: center;
   width: 40%;
   color:red;
   background: orange;
+  padding: 0px 10px 70px 40px;
 }
  
