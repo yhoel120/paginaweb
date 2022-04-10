@@ -116,7 +116,8 @@ header .textos-header{
 
  
 ul.socialIcons {
-  margin-top: 30%;
+  
+  font-size: 30px;
   padding: 0;
   text-align: center;
 }
