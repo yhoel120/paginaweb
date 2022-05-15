@@ -1,5 +1,5 @@
 body{
-background-color: cian;
+background-color:black;
 }
 
 /* menu */
@@ -137,10 +137,4 @@ background-color: cian;
 
 .btn:hover::before {
  transform: translateX(0);
-}
-
-
-.p{
-  color: white;
-  text-align: center;
 }
