@@ -138,3 +138,8 @@ background-color: black;
 .btn:hover::before {
  transform: translateX(0);
 }
+
+
+.p{
+  color: white;
+}
