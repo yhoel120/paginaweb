@@ -249,6 +249,7 @@ a {
 .list__item:nth-child(3).active{
     left: 0;
     transform: rotateY(5deg) skewX(5deg);
+    
 }
 
 .list__item:nth-child(4).active{
