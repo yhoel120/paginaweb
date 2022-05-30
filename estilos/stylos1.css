@@ -114,7 +114,7 @@ a {
 
 .list__item .link__item {
     display: block;
-    padding: 18px;
+    padding: 38px;
     background: rgba(0,0,0,.2);
     text-align: center;
     transition: all .3s cubic-bezier(.96, .65, .65, .96);
