@@ -46,6 +46,71 @@
             update.handle(".toggler", ".list__item")
 
 }
+
+function HandleToggle(){
+    //creating an empty object
+    this.object = {}
+    
+    //creating our handle function
+    this.handle = function(toggler, list__items){
+        //get reference of the HTML elements
+        const handleButton = document.querySelector(toggler);
+        const handleList = document.querySelectorAll(list__items);
+        
+        //making our handleButton be a object
+        this.object.property = handleButton;
+        
+        //the typeof of this.object.hasOwnProperty its converted as a boolean type
+        //so we use this method if we want to know if this object has a falsy value
+        if(typeof this.object.hasOwnProperty("property") !== true){
+           //click on the button to give it an interactive animation with CSS styles
+            handleButton.addEventListener("click", () => {
+                handleButton.classList.toggle("open");
+                
+                //if toggler and list items have own class
+                if(toggler && list__items){
+                
+         //iterate over the handleList            
+   handleList.forEach((item, index) => {
+         
+         //knowing if some element has own nth-child
+                        if(document.querySelector(`:nth-child(${index + 1})`)){
+                            item.classList.toggle("active");
+                        
+                        }
+                        
+                        
+                    })
+                }
+                
+        const appTitle = document.querySelector(".app__title");
+                        
+        appTitle.
+           animate({
+                transform: [
+                    "translateY(0)",
+                    "translateX(-50%)",
+                    "scale(0)",
+                    "scale(1)"
+                ],
+                opacity: [0, .5]
+                },{
+                    fill: "backwards",
+                    delay: 1000,
+                    duration: 2000,
+                    iteration: 0.25,
+                    direction: "alternate",
+                    endDelay: -1000,
+                    easing: "ease-in-out"
+                })
+            }) //handleButton
+        }
+    }
+}
+
+
+
+
         </script>
     </body>
 </html>
