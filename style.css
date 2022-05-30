@@ -117,8 +117,8 @@ header .textos-header{
  
 ul.socialIcons {
   
-  padding-top: 4rem;
-  padding: 0;
+  padding-top: 3rem;
+  padding: ;
   text-align: center;
 }
 
@@ -127,7 +127,7 @@ ul.socialIcons {
   list-style: none;
   display: inline-block;
   margin: 4px;
-  border-radius: 2em;
+  border-radius: 3rem;
   overflow: hidden;
 }
 
@@ -138,7 +138,7 @@ ul.socialIcons {
   max-width: 1.28571429em;
   height: 1.28571429em;
   white-space: nowrap;
-  line-height: 1.5em; /*it's working only when you write text with icon*/
+  line-height: 0.5em; /*it's working only when you write text with icon*/
   transition: 0.5s;
   text-decoration: none;
   font-family: arial;
