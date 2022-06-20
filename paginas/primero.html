@@ -1,24 +1,385 @@
+<!-- Created by Damian Ponce -->
+
+
+
+<!--
+    Name code: Menu Animation
+    Created by: Damian Ponce
+    Date: 06/july/2020
+-->
+
 <!DOCTYPE html>
 <html>
-    <body><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
-        <title>paguina web</title> 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="navbar"> <a class="navbar-brand" href="#">yhoel_carrier</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
-             <ul class="navbar-nav mr-auto"> 
-              <li class="nav-item active"> <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a> </li> 
-              <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li> 
-              <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </a> 
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> 
-                <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Something else here</a> 
-               </div> </li> 
-              <li class="nav-item"> <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> </li> 
-             </ul> 
-             <form class="form-inline my-2 my-lg-0"> 
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> 
-             </form> 
-            </div> 
-           </nav> 
-  
-    <marquee>© Copyright 2019 yhoelch</marquee>
-</body>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Menu Animation</title>
+        <met name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Satisfy|Orbitron&display=swap"/>
+ <link rel="stylesheet" href="estilos/stylos1.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <header class="app__header">
+                <nav class="app__nav">
+                    <a href="../index.html" class="logo">yhoel<span>carrier</span></a>
+                    <div class="toggler">
+                        <div class="bar half start"></div>
+                        <div class="bar"></div>
+                        <div class="bar half end"></div>
+                    </div>
+                    <ul class="app__menu">
+                        <li class="list__item"><a href="../index.html" class="link__item">Inicio</a></li>
+                        <li class="list__item"><a href="#" class="link__item">about</a></li>
+                        <li class="list__item"><a href="#" class="link__item">info</a></li>
+                        <li class="list__item"><a href="#" class="link__item">blog</a></li>
+                        <li class="list__item"><a href="#" class="link__item">contact</a></li>
+                    </ul>
+                </nav>
+                <h1 class="app__title">batery a</h1>
+            </header>
+        </div>
+        
+        <script>
+            //call the window object if the document is ready.
+            window.onload = function(){
+            const update = new HandleToggle();
+            update.handle(".toggler", ".list__item")
+
+}
+
+function HandleToggle(){
+    //creating an empty object
+    this.object = {}
+    
+    //creating our handle function
+    this.handle = function(toggler, list__items){
+        //get reference of the HTML elements
+        const handleButton = document.querySelector(toggler);
+        const handleList = document.querySelectorAll(list__items);
+        
+        //making our handleButton be a object
+        this.object.property = handleButton;
+        
+        //the typeof of this.object.hasOwnProperty its converted as a boolean type
+        //so we use this method if we want to know if this object has a falsy value
+        if(typeof this.object.hasOwnProperty("property") !== true){
+           //click on the button to give it an interactive animation with CSS styles
+            handleButton.addEventListener("click", () => {
+                handleButton.classList.toggle("open");
+                
+                //if toggler and list items have own class
+                if(toggler && list__items){
+                
+         //iterate over the handleList            
+   handleList.forEach((item, index) => {
+         
+         //knowing if some element has own nth-child
+                        if(document.querySelector(`:nth-child(${index + 1})`)){
+                            item.classList.toggle("active");
+                        
+                        }
+                        
+                        
+                    })
+                }
+                
+        const appTitle = document.querySelector(".app__title");
+                        
+        appTitle.
+           animate({
+                transform: [
+                    "translateY(0)",
+                    "translateX(-50%)",
+                    "scale(0)",
+                    "scale(1)"
+                ],
+                opacity: [0, .5]
+                },{
+                    fill: "backwards",
+                    delay: 1000,
+                    duration: 2000,
+                    iteration: 0.25,
+                    direction: "alternate",
+                    endDelay: -1000,
+                    easing: "ease-in-out"
+                })
+            }) //handleButton
+        }
+    }
+}
+
+
+
+
+        </script>
+        <style>
+/* Created by Damian Ponce */
+
+
+
+:root {
+    /* screen size */
+    --size: 100%;
+    --height: 100vh;
+    --pos: 50%;
+    
+    /* colors */
+    --dark-blue: #2c3e50;
+    --light-blue: #3498db;
+    --cloud: #ecf0f1;
+    --gradient: var(--light-blue), var(--dark-blue);
+    
+    /* fonts */
+    --font-stack: "Abel", sans-serif;
+    --logo-stack: "Orbitron", sans-serif;
+    --heading: "Satisfy", sans-serif;
+}
+
+/* Breakpoint */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL CONTENT */
+body {
+    width: var(--size);
+    height: var(--height);
+    position: relative;
+    background: linear-gradient(
+        45deg,
+        var(--gradient)
+    );
+}
+
+a {
+    text-decoration: none;
+    color: var(--cloud);
+}
+
+.container,
+.app__header {
+    width: inherit;
+    height: inherit;
+    display: block;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HEADER & NAVIGATION */
+.app__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app__nav {
+    width: var(--size);
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba(0,0,0,.4);
+}
+
+/* LOGO */
+.logo {
+    align-self: flex-start;
+    margin-left: 10px;
+    font-size: 1.4rem;
+    font-family: var(--font-stack);
+    color: var(--light-blue);
+}
+
+.logo span {
+    font-size: 2rem;
+    font-family: var(--logo-stack);
+    font-weight: bold;
+    color: var(--cloud);
+}
+
+/* STYLING APP MENU */
+.app__menu {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    
+    list-style: none;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.list__item {
+    width: var(--size);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-size: 1.4836rem;
+}
+
+.list__item .link__item {
+    display: block;
+    padding: 18px;
+    background: rgba(0,0,0,.2);
+    text-align: center;
+    transition: all .3s cubic-bezier(.96, .65, .65, .96);
+}
+
+.list__item .link__item::first-letter {
+    font-size: 2rem;
+    font-family: var(--logo-stack);
+    text-transform: capitalize;
+    color: var(--light-blue);
+    font-weight: bold;
+}
+
+/* HOVER OVER LINK ITEMS */
+.list__item .link__item:hover {
+    color: var(--light-blue);
+    background: rgba(0,0,0,.7);
+    font-size: 2rem;
+}
+
+.list__item:hover .link__item::first-letter {
+    color: var(--cloud);
+}
+
+/* HEADING */
+.app__title {
+    width: var(--size);
+    position: absolute;
+    top: var(--pos);
+    left: var(--pos);
+    transform: translate(-50%, -50%);
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: 0 1px 2px var(--cloud),
+                 0 2px 2px var(--dark-blue),
+                 0 3px 2px var(--cloud);
+    font-family: var(--heading);
+    font-size: 2.1783rem;
+    color: var(--cloud);
+    letter-spacing: 1px;
+    transition: all 1s cubic-bezier(.35,.1693,.1693,.35);
+    opacity: .7;
+}
+
+/* STYLING TOGGLER BUTTON */
+.toggler {
+    width: 2.5rem;
+    height: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 1.242rem;
+    right: 1.86rem;
+    transition: transform 350ms cubic-bezier(.75,.35,.35,.75);
+    
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.bar {
+    width: var(--size);
+    height: 2px;
+    background: var(--cloud);
+    border-radius: 25px;
+}
+
+.bar.half {
+    width: var(--pos);
+}
+
+.bar.start {
+    transform-origin: left;
+    transition: transform 350ms cubic-bezier(.65,.96,.96,.65);
+}
+
+.bar.end {
+    align-self: flex-end;
+    transform-origin: right;
+    transition: transform 350ms cubic-bezier(.65,.96,.96,.65);
+}
+
+/* ANIMATE THE TOGGLER BUTTON */
+.open .bar.start {
+    transform: rotate(270deg) translate(-.3rem, 1.2rem);
+}
+
+.open .bar.end {
+    transform: rotate(270deg) translate(.4rem, -1.3rem);
+}
+
+.toggler.open {
+    transform: rotate(135deg);
+}
+
+.list__item:nth-child(1){
+    left: -100%;
+    transition: left 250ms cubic-bezier(0.67,1.672,0.782,0.862);
+}
+
+.list__item:nth-child(2){
+    right: -100%;
+    transition: right 350ms cubic-bezier(0.67,1.672,0.782,0.862);
+}
+
+.list__item:nth-child(3){
+    left: -100%;
+    transition: left 450ms cubic-bezier(0.67,1.672,0.782,0.862);
+}
+
+.list__item:nth-child(4){
+    right: -100%;
+    transition: right 550ms cubic-bezier(0.67,1.672,0.782,0.862);
+}
+
+.list__item:nth-child(5){
+    left: -100%;
+    transition: left 650ms cubic-bezier(0.67,1.672,0.782,0.862);
+}
+
+
+.list__item:nth-child(1).active{
+    left: 0;
+    transform: rotateY(5deg) skewX(5deg);
+}
+
+.list__item:nth-child(2).active{
+    right: 0;
+    transform: rotateY(-5deg) skewX(-5deg);
+}
+
+.list__item:nth-child(3).active{
+    left: 0;
+    transform: rotateY(5deg) skewX(5deg);
+    
+}
+
+.list__item:nth-child(4).active{
+    right: 0;
+    transform: rotateY(-5deg) skewX(-5deg);
+}
+
+.list__item:nth-child(5).active{
+    left: 0;
+    transform: rotateY(5deg) skewX(5deg);
+}
+
+
+
+
+</style>
+    </body>
 </html>
